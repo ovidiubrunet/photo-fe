@@ -26,22 +26,12 @@
 	};
 
 	var sliderMain = function() {
-		
-	  	$('#fh5co-home .flexslider').flexslider({
-			animation: "fade",
-			slideshowSpeed: 5000
-	  	});
-
-	  	 $('#fh5co-home .flexslider .slides > li').css('height', $(window).height());	
-	  	$(window).resize(function(){
-	  		$('#fh5co-home .flexslider .slides > li').css('height', $(window).height());	
-	  	});
-
-	  	$('.js-fh5co-next').on('click', function(event){
+	
+	  	$('.js-epic-next').on('click', function(event){
 
 	  		event.preventDefault();
 	  		$('html, body').animate({
-				scrollTop: $(this).closest('#fh5co-home').next().offset().top
+				scrollTop: $(this).closest('#epic-home').next().offset().top
 			}, 800, 'easeOutExpo');
 	  		
 	  	});
@@ -50,7 +40,7 @@
 
 	var sliderTestimony = function() {
 
-		$('#fh5co-testimony .flexslider').flexslider({
+		$('#epic-testimony .flexslider').flexslider({
 			animation: "slide",
 			slideshowSpeed: 5000,
 			directionNav: false,
@@ -63,12 +53,12 @@
 
 	var offcanvasMenu = function() {
 
-		$('body').prepend('<div id="fh5co-offcanvas" />');
-		$('#fh5co-offcanvas').append($('#fh5co-main-nav').clone());
+		$('body').prepend('<div id="epic-offcanvas" />');
+		$('#epic-offcanvas').append($('#epic-main-nav').clone());
 
 		setTimeout(function(){
-			$('#fh5co-offcanvas').prepend('<a href="#" class="js-fh5co-offcanvas-close fh5co-offcanvas-close" />');
-			$('#fh5co-offcanvas #fh5co-main-nav').attr('id', '');
+			$('#epic-offcanvas').prepend('<a href="#" class="js-epic-offcanvas-close epic-offcanvas-close" />');
+			$('#epic-offcanvas #epic-main-nav').attr('id', '');
 		}, 200);
 		
 	};
@@ -82,7 +72,7 @@
 			sticky.css('height', sticky.height());
 		});
 
-		var $section = $('.fh5co-main-nav');
+		var $section = $('.epic-main-nav');
 		
 		$section.waypoint(function(direction) {
 		  	
@@ -93,7 +83,7 @@
 			    		'top' : 0,
 			    		'width' : '100%',
 			    		'z-index' : 99999
-			    	}).addClass('fh5co-shadow');;
+			    	}).addClass('epic-shadow');;
 
 			}
 
@@ -103,7 +93,7 @@
 
 		$('.js-sticky').waypoint(function(direction) {
 		  	if (direction === 'up') {
-		    	$section.attr('style', '').removeClass('fh5co-shadow');
+		    	$section.attr('style', '').removeClass('epic-shadow');
 		  	}
 		}, {
 		  	offset: function() { return -$(this.element).height() + 69; }
@@ -115,22 +105,22 @@
 	var mobileMenuOutsideClick = function() {
 
 		$(document).click(function (e) {
-	    var container = $("#fh5co-offcanvas, .js-fh5co-nav-toggle, .js-fh5co-offcanvas-close");
+	    var container = $("#epic-offcanvas, .js-epic-nav-toggle, .js-epic-offcanvas-close");
 	    if (!container.is(e.target) && container.has(e.target).length === 0) {
 	    	if ( $('body').hasClass('offcanvas-visible') ) {
 
-	    		$('body').removeClass('fh5co-overflow offcanvas-visible');
+	    		$('body').removeClass('epic-overflow offcanvas-visible');
 
-	    		$('.js-fh5co-nav-toggle').removeClass('active');
+	    		$('.js-epic-nav-toggle').removeClass('active');
 	    	}
 	    }
 		});
 
-		$('body').on('click', '.js-fh5co-offcanvas-close', function(event){
+		$('body').on('click', '.js-epic-offcanvas-close', function(event){
 			
 			if ( $('body').hasClass('offcanvas-visible') ) {
-	    		$('body').removeClass('fh5co-overflow offcanvas-visible');
-	    		$('.js-fh5co-nav-toggle').removeClass('active');
+	    		$('body').removeClass('epic-overflow offcanvas-visible');
+	    		$('.js-epic-nav-toggle').removeClass('active');
 	    	}
 
 	    	event.preventDefault();
@@ -176,11 +166,11 @@
 	// Burger Menu
 	var burgerMenu = function() {
 
-		$('body').on('click', '.js-fh5co-nav-toggle', function(event){
+		$('body').on('click', '.js-epic-nav-toggle', function(event){
 
 			var $this = $(this);
 
-			$('body').toggleClass('fh5co-overflow offcanvas-visible');
+			$('body').toggleClass('epic-overflow offcanvas-visible');
 			$this.toggleClass('active');
 			event.preventDefault();
 
@@ -192,27 +182,27 @@
 
 		$(window).scroll(function(){
 
-			var header = $('#fh5co-header'),
+			var header = $('#epic-header'),
 				scrlTop = $(this).scrollTop();
 
 			if ( scrlTop > 500 && scrlTop <= 2000 ) {
-				header.addClass('navbar-fixed-top fh5co-animated slideInDown');
+				header.addClass('navbar-fixed-top epic-animated slideInDown');
 			} else if ( scrlTop <= 500) {
 				if ( header.hasClass('navbar-fixed-top') ) {
-					header.addClass('navbar-fixed-top fh5co-animated slideOutUp');
+					header.addClass('navbar-fixed-top epic-animated slideOutUp');
 					setTimeout(function(){
-						header.removeClass('navbar-fixed-top fh5co-animated slideInDown slideOutUp');
+						header.removeClass('navbar-fixed-top epic-animated slideInDown slideOutUp');
 					}, 100 );
 				}
 			} 
 
-		   $('#fh5co-home .flexslider .fh5co-overlay').css({
+		   $('#epic-home .flexslider .epic-overlay').css({
 				'opacity' : (.5)+(scrlTop/2000)
 		   });
 
 		   if ( $('body').hasClass('offcanvas-visible') ) {
 		   	$('body').removeClass('offcanvas-visible');
-		   	$('.js-fh5co-nav-toggle').removeClass('active');
+		   	$('.js-epic-nav-toggle').removeClass('active');
 		   }
 		 
 		});
@@ -220,7 +210,7 @@
 		$(window).resize(function() {
 			if ( $('body').hasClass('offcanvas-visible') ) {
 		   	$('body').removeClass('offcanvas-visible');
-		   	$('.js-fh5co-nav-toggle').removeClass('active');
+		   	$('.js-epic-nav-toggle').removeClass('active');
 		   }
 		});
 		
@@ -252,7 +242,7 @@
 		});
 
 		if ( $(this).attr('href') != "#") {
-			$('#fh5co-main-nav a:not([class="external"]), #fh5co-offcanvas a:not([class="external"])').click(function(event){
+			$('#epic-main-nav a:not([class="external"]), #epic-offcanvas a:not([class="external"])').click(function(event){
 				var section = $(this).data('nav-section');
 
 
@@ -276,8 +266,8 @@
 	// Reflect scrolling in navigation
 	var navActive = function(section) {
 		
-		$('#fh5co-main-nav li, #fh5co-offcanvas li').removeClass('active');
-		$('#fh5co-main-nav, #fh5co-offcanvas').find('a[data-nav-section="'+section+'"]').closest('li').addClass('active');
+		$('#epic-main-nav li, #epic-offcanvas li').removeClass('active');
+		$('#epic-main-nav, #epic-offcanvas').find('a[data-nav-section="'+section+'"]').closest('li').addClass('active');
 		
 	};
 
@@ -340,7 +330,7 @@
 
 		pageTransition();
 		fullHeight();
-		//sliderMain();
+		sliderMain();
 		sliderTestimony();
 		offcanvasMenu();
 		mainMenuSticky();
@@ -361,7 +351,7 @@
  /* Home Slideshow Vegas
   -----------------------------------------------*/
   $(function() {
-    $('#fh5co-home').vegas({
+    $('#epic-home').vegas({
         slides: [
             { src: 'images/slide-img1.jpg' },
             { src: 'images/slide-img2.jpg' },

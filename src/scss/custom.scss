@@ -33,7 +33,7 @@ $font-secondary: 'Roboto', sans-serif;;
     -ms-transition: 		all $transition $ease;
     transition:         all $transition $ease;
 }
-@mixin fh5co-translateX($translatex) {
+@mixin epic-translateX($translatex) {
 	-moz-transform: translateX($translatex);
 	-webkit-transform: translateX($translatex);
 	-ms-transform: translateX($translatex);
@@ -108,7 +108,7 @@ body {
 	line-height: 1.5;
 	color: #7a7e89;
 	background: #f7f7f7;
-	&.fh5co-overflow {
+	&.epic-overflow {
 		overflow-x: auto;	
 	}
 }
@@ -287,7 +287,7 @@ p {
   }
 }
 
-#fh5co-header {
+#epic-header {
 	position: absolute;
 	top: 20px;
 	left: 0;
@@ -299,7 +299,7 @@ p {
 		background: $brand-white;
 		top: 0;
 	}
-	#fh5co-logo {
+	#epic-logo {
 		float: left;
 		line-height: 1.2;
 		position: relative;
@@ -318,7 +318,7 @@ p {
 			}
 		}
 	}
-	#fh5co-main-nav {
+	#epic-main-nav {
 		float: right;
 		@media screen and (max-width :$screen-sm) {
 			display: none;
@@ -360,7 +360,7 @@ p {
 		box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
 		top: 0;
 		left: 0px;
-		#fh5co-logo {
+		#epic-logo {
 			float: left;
 			line-height: 1.2;
 			a {
@@ -370,7 +370,7 @@ p {
 			}
 		}
 
-		#fh5co-main-nav {
+		#epic-main-nav {
 			ul {
 				li {
 					a {
@@ -399,7 +399,7 @@ p {
 /*
  * Flexslider
  */
-#fh5co-home { 
+#epic-home { 
 	min-height: 700px;
   background: $brand-white url(../images/loader.gif) no-repeat center center ;
   background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
@@ -407,37 +407,29 @@ p {
   
   
   /*---------------------------------------
-      Home Section              
+      Slider Section              
   -----------------------------------------*/
 
-  #home {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-          align-items: center;
-    height: 100vh;
-    text-align: center;
-  }
+	.slider {
 
-  #home h1 {
-    color: #ffffff;
-  }
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+		height: 100vh;
+		text-align: center;
+		color: #ffffff;
 
-  #home .col-md-8 {
-    padding-left: 62px;
-  }
-
-	.flexslider {
 		border: none;
 		position: relative;
 		z-index: 1;
 		margin-bottom: 0;
 
-		.fh5co-text {
+		.epic-text {
 			position: absolute;
 			z-index: 3;
 			width: 100%;
@@ -464,7 +456,7 @@ p {
 					font-size: 30px;
 				}
 			}
-			.fh5co-go {
+			.epic-go {
 				margin-top: 30px;
 				a {
 					font-family: $font-secondary;
@@ -512,7 +504,7 @@ p {
 				background-size: cover;
 			}
 		}
-		.fh5co-overlay {
+		.epic-overlay {
 			position: absolute;
 			z-index: 3;
 			top: 0;
@@ -529,12 +521,12 @@ p {
 	}
 }
 
-#fh5co-main,
-#fh5co-offcanvas {
+#epic-main,
+#epic-offcanvas {
 	@include transition(.8s);
 }
 
-#fh5co-offcanvas {
+#epic-offcanvas {
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -544,7 +536,7 @@ p {
 	background: #444853;
 	overflow-y: auto;
 	padding: 50px 30px 30px 30px;
-	.fh5co-offcanvas-close {
+	.epic-offcanvas-close {
 		position: absolute;
 		top: 20px;
 		right: 30px;
@@ -561,7 +553,7 @@ p {
 			}
 		}
 	}
-	@include fh5co-translateX(275px);
+	@include epic-translateX(275px);
 	nav {
 		ul {
 			padding: 0;
@@ -587,45 +579,45 @@ p {
 		}
 	}
 	.offcanvas-visible & {
-		@include fh5co-translateX(0px);
+		@include epic-translateX(0px);
 	}
 }
-#fh5co-main {
+#epic-main {
 	// @media screen and(max-width: $screen-sm) {
 	// 	@include transition(.8s);
-	// 	@include fh5co-translateX(0px);	
+	// 	@include epic-translateX(0px);	
 	// }
 	// .offcanvas-visible & {
-		// @include fh5co-translateX(-275px);	
+		// @include epic-translateX(-275px);	
 	// }
 }
 
-#fh5co-portfolio,
-#fh5co-about,
-#fh5co-contact,
-#fh5co-testimony,
-#fh5co-content {
+#epic-portfolio,
+#epic-about,
+#epic-contact,
+#epic-testimony,
+#epic-content {
 	padding: 7em 0;
 	@media screen and (max-width: $screen-sm) {
 		padding: 4em 0;
 	}
 }
-#fh5co-content {
+#epic-content {
 	figure {
 		margin-bottom: 30px;
 	}
 }
-#fh5co-about {
+#epic-about {
 	background: #444853;
 	h2 {
 		color: $brand-white;
 	}
-	.fh5co-text {
+	.epic-text {
 		padding-left: 4em;
 		@media screen and (max-width: $screen-md) {
 			padding: 0 0 20px 0;
 		}
-		.fh5co-meta {
+		.epic-meta {
 			color: rgba(255,255,255,.2);
 			text-transform: uppercase;
 			letter-spacing: 2px;
@@ -660,7 +652,7 @@ p {
 	}
 }
 
-#fh5co-testimony {
+#epic-testimony {
 	background-color: transparent;
 	background-size: cover;
 	background-attachment: fixed;
@@ -670,7 +662,7 @@ p {
 		position: relative;
 		z-index: 5;
 	}
-	> .fh5co-overlay {
+	> .epic-overlay {
 		position: absolute;
 		top: 0; 
 		left: 0;
@@ -747,12 +739,12 @@ p {
 	}
 }
 
-#fh5co-contact {
+#epic-contact {
 
 }
 
 
-#fh5co-footer {
+#epic-footer {
 	background: #ececec;
 	padding: 4em 0;
 	font-size: 16px;
@@ -768,13 +760,13 @@ p {
 	p{
 		margin-bottom: 10px;
 	}
-	.fh5co-footer-widget {
+	.epic-footer-widget {
 		margin-bottom: 30px;
 		float: left;
 		width: 100%;
 	}
 }
-.fh5co-social {
+.epic-social {
 	padding: 0;
 	margin: 0;
 	@media screen and (max-width: $screen-sm) {
@@ -836,13 +828,13 @@ p {
 			width: 100%;
 			@include transition(.8s, ease-out);
 		}
-		.fh5co-title {
+		.epic-title {
 			font-size: 18px;
 			color: $brand-white;
 			padding: 0;
 			position: relative;
 		}
-		.fh5co-meta {
+		.epic-meta {
 			color: rgba(255,255,255,.4);
 			font-size: 10px;
 			font-weight: 400;
@@ -877,7 +869,7 @@ p {
 }
 
 .section-heading {
-	.fh5co-section-title {
+	.epic-section-title {
 		font-size: 11px;
 		letter-spacing: 2px;
 		text-transform: uppercase;
@@ -889,7 +881,7 @@ p {
 	}
 }
 
-.fh5co-lead {
+.epic-lead {
 	font-size: 26px;
 	@media screen and (max-width: $screen-sm) {
 		font-size: 20px;
@@ -900,12 +892,12 @@ p {
 .to-animate-2,
 .animate-box {
 	.js & {
-		opacity: 0;	
+		opacity: 1;	
 	}
 }
 
 // Burger Menu
-.fh5co-nav-toggle {
+.epic-nav-toggle {
   width: 25px;
   height: 25px;
   cursor: pointer;
@@ -942,22 +934,22 @@ p {
   }
 }
 
-.fh5co-nav-toggle i::before {
+.epic-nav-toggle i::before {
   top: -7px;
 }
-.fh5co-nav-toggle i::after {
+.epic-nav-toggle i::after {
   bottom: -7px;
 }
-.fh5co-nav-toggle:hover i::before {
+.epic-nav-toggle:hover i::before {
   top: -10px;
 }
-.fh5co-nav-toggle:hover i::after {
+.epic-nav-toggle:hover i::after {
   bottom: -10px;
 }
-.fh5co-nav-toggle.active i {
+.epic-nav-toggle.active i {
 	background: transparent;
 }
-.fh5co-nav-toggle.active i::before {
+.epic-nav-toggle.active i::before {
   top:0;
   -webkit-transform: rotateZ(45deg);
      -moz-transform: rotateZ(45deg);
@@ -965,7 +957,7 @@ p {
        -o-transform: rotateZ(45deg);
           transform: rotateZ(45deg);
 }
-.fh5co-nav-toggle.active i::after {
+.epic-nav-toggle.active i::after {
   bottom:0;
   -webkit-transform: rotateZ(-45deg);
      -moz-transform: rotateZ(-45deg);
@@ -973,7 +965,7 @@ p {
        -o-transform: rotateZ(-45deg);
           transform: rotateZ(-45deg);
 }
-.fh5co-nav-toggle {
+.epic-nav-toggle {
   position: absolute;
   top: 8px;
   right: 15px;
@@ -995,7 +987,7 @@ p {
 
 
 // Menu bar Animate
-.fh5co-animated {
+.epic-animated {
   -webkit-animation-duration: .3s;
   animation-duration: .3s;
   -webkit-animation-fill-mode: both;
