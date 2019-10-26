@@ -1,0 +1,32 @@
+$font-stack:    "Open Sans", "Helvetica Neue", sans-serif;
+
+html,
+body {
+  font-family: $font-stack;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #666;
+}
+
+a {
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+ a:hover,
+ a:focus {
+  text-decoration: none;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
